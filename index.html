@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Wedding Invitation for Louise and Kim - December 1, 2025"
+    />
+    <title>Louise & Kim - Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BZXh8CkZf1Z1Gq9Z3G0XG2JZ6GIKtT4Hknc0fYB2V8p+Z7r6POC4YxRkW0Zr8+8VA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Page 1: Main Invitation -->
+    <div class="invitation-page" id="page1">
+      <div class="invitation-card clickable-card" onclick="showPage2()">
+        <div class="invitation-content">
+          <!-- Names Section -->
+          <div class="names-section">
+            <h1 class="name font-serif">LOUISE</h1>
+            <div class="names-row">
+              <p class="and font-serif">and</p>
+              <h1 class="name font-serif">KIM</h1>
+            </div>
+          </div>
+
+          <!-- Request Text -->
+          <div class="request-text">
+            <p class="font-serif">REQUEST THE HONOR OF YOUR PRESENCE</p>
+            <p class="font-serif">AT THEIR WEDDING CELEBRATION</p>
+          </div>
+
+          <!-- Date and Venue Section -->
+          <div class="date-venue-section">
+            <div class="date-time-group">
+              <h2 class="date font-serif">12 . 01 . 2025</h2>
+              <p class="time font-serif">THREE O CLOCK IN THE AFTERNOON</p>
+            </div>
+            <div class="venue-group">
+              <h3 class="venue font-serif">TIMMY IN THE WOODS</h3>
+              <p class="location font-serif">ANTIPOLO CITY, RIZAL</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floral Decoration -->
+        <div class="floral-decoration">
+          <img src="Flower.png" alt="Floral decoration" class="flower-image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 2: Photo Gallery & RSVP -->
+    <div class="invitation-page" id="page2" style="display: none">
+      <div class="invitation-card clickable-card" onclick="showPage3()">
+        <div class="invited-header">
+          <div class="you-are font-serif">You are</div>
+          <div class="invited-title font-serif">INVITED</div>
+          <hr class="invited-rule" />
+        </div>
+
+        <div class="photo-gallery">
+          <div class="photo-grid">
+            <div class="photo-item">
+              <img
+                src="pic1.jpg"
+                alt="Couple laughing together"
+                class="photo"
+              />
+            </div>
+            <div class="photo-item">
+              <img src="pic2.jpg" alt="Couple on motorcycle" class="photo" />
+            </div>
+            <div class="photo-item">
+              <img src="pic3.jpg" alt="Couple on beach" class="photo" />
+            </div>
+            <div class="photo-item">
+              <img src="pic4.jpg" alt="Couple in field" class="photo" />
+            </div>
+          </div>
+
+          <div class="rsvp-section">
+            <i
+              class="fa-solid fa-envelope-open rsvp-icon"
+              onclick="openRSVPForm(event)"
+            ></i>
+            <button
+              class="rsvp-cta"
+              onclick="openRSVPForm(event)"
+              aria-label="Open RSVP form"
+            >
+              <span class="font-serif">RSVP HERE</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 3: The Details -->
+    <div class="invitation-page" id="page3" style="display: none">
+      <div class="invitation-card clickable-card" onclick="showPage4()">
+        <div class="details-content">
+          <!-- Header Section -->
+          <div class="details-header">
+            <div class="the-text font-script">The</div>
+            <div class="details-title font-serif">DETAILS</div>
+            <hr class="details-rule" />
+          </div>
+
+          <!-- Attire Section -->
+          <div class="details-section attire-section">
+            <h3 class="section-title font-serif">ATTIRE</h3>
+            <div class="section-content font-serif">
+              <p>Kindly wear semi formal attire.</p>
+              <p><strong>GENTLEMEN:</strong> LONG SLEEVES AND PANTS</p>
+              <p><strong>LADIES:</strong> LONG GOWN OR DRESS</p>
+              <p>
+                We also encourage wearing flats, as the ceremony grounds may be
+                uneven
+              </p>
+            </div>
+            <!-- Color Palette Logo -->
+            <div class="color-palette-logo">
+              <img
+                src="colore_palette.png"
+                alt="Color palette logo"
+                class="palette-image"
+              />
+            </div>
+          </div>
+
+          <!-- Ceremony & Reception Section -->
+          <div class="details-section ceremony-section">
+            <h3 class="section-title font-serif">CEREMONY AND RECEPTION</h3>
+            <div class="section-content font-serif">
+              <p>
+                We expect you to arrive 30 minutes earlier before the ceremony,
+                which begins at 3 o'clock. A dinner will follow right after. To
+                end the night, we'd love for you to take a dip in the pool with
+                us—formal wear and all.
+              </p>
+            </div>
+          </div>
+
+          <!-- A Note on Gifts Section -->
+          <div class="details-section gifts-section">
+            <h3 class="section-title font-serif">A NOTE ON GIFTS</h3>
+            <div class="section-content font-serif">
+              <p>
+                As love is what this day is all about, your presence is one we
+                can't celebrate without. But should you still believe that a
+                gift is worth giving, an envelope for our future is a delightful
+                blessing.
+              </p>
+            </div>
+          </div>
+
+          <!-- Important Note Section -->
+          <div class="details-section important-section">
+            <h3 class="section-title font-serif">IMPORTANT NOTE</h3>
+            <div class="section-content font-serif">
+              <p>Our celebration will be intimate and meaningful,</p>
+              <p>reserved only for those invited. We'd be truly honored</p>
+              <p>by your presence on our wedding day.</p>
+            </div>
+            <!-- Flower Decoration -->
+            <div class="flower-decoration">
+              <img
+                src="Flower.png"
+                alt="Floral decoration"
+                class="flower-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 4: Formal Invitation -->
+    <div class="invitation-page" id="page4" style="display: none">
+      <div class="invitation-card clickable-card" onclick="showPage1()">
+        <div class="formal-invitation-content">
+          <!-- Names Section -->
+          <div class="formal-names-section">
+            <h1 class="formal-name font-serif">LOUISE</h1>
+            <h1 class="formal-name font-serif">KIM</h1>
+          </div>
+
+          <!-- Request Text -->
+          <div class="formal-request-text">
+            <p class="font-serif">REQUEST THE HONOR OF YOUR PRESENCE</p>
+            <p class="font-serif">AT THEIR WEDDING CELEBRATION</p>
+          </div>
+
+          <!-- Date and Time -->
+          <div class="formal-date-time">
+            <h2 class="formal-date font-serif">12 . 01 . 2025</h2>
+            <p class="formal-time font-serif">THREE O'CLOCK IN THE AFTERNOON</p>
+          </div>
+
+          <!-- Location -->
+          <div class="formal-location">
+            <p class="font-serif">TIMMY IN THE WOODS</p>
+            <p class="font-serif">ARKLOW, IRL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RSVP Popup Modal -->
+    <div class="modal-overlay" id="rsvpModal" onclick="closeRSVPForm()">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <h2 class="font-serif">RSVP to the Wedding</h2>
+          <button class="close-btn" onclick="closeRSVPForm()">&times;</button>
+        </div>
+
+        <div class="rsvp-welcome-message">
+          <p>
+            We are so happy you are here. It means so much to us that you are
+            joining us for this journey.
+          </p>
+          <p>
+            As we have chosen to keep our wedding day beautifully intimate, we
+            kindly ask that you RSVP only for the specific people listed on the
+            invitation. We cannot wait to share our special day with you —your
+            presence is the greatest gift.
+          </p>
+          <p>Love, Louise and Kim</p>
+        </div>
+
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="form-group">
+            <label for="guestName">Full Name *</label>
+            <input type="text" id="guestName" name="guestName" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="attendance">Will you be attending? *</label>
+            <select id="attendance" name="attendance" required>
+              <option value="">Please select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message for the couple (optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              placeholder="Share your well wishes..."
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="cancel-btn" onclick="closeRSVPForm()">
+              Cancel
+            </button>
+            <button type="submit" class="submit-btn">Submit RSVP</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success Message -->
+    <div class="success-message" id="successMessage" style="display: none">
+      <div class="success-content">
+        <h3 class="font-serif">Thank you!</h3>
+        <p>Your RSVP has been submitted successfully.</p>
+        <button onclick="closeSuccessMessage()">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
