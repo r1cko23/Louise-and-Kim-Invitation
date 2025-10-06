@@ -242,8 +242,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.25rem;
   position: relative;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 480px) {
+  .invitation-page {
+    padding: 0.15rem;
+    min-height: 100vh;
+  }
 }
 
 /* Second page specific styling */
@@ -297,18 +305,34 @@ body {
   background: var(--background-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
-  padding: var(--spacing-md) 0.8rem;
+  padding: 0.5rem 0.6rem;
   max-width: 100%;
   width: 100%;
   position: relative;
   background-image: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0.25rem;
   min-height: 100vh;
   max-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Mobile card optimizations */
+@media (max-width: 480px) {
+  .invitation-card {
+    padding: 0.4rem 0.5rem;
+    margin-bottom: 0.15rem;
+    border-radius: 8px;
+  }
+
+  #page2 .invitation-card,
+  #page3 .invitation-card,
+  #page4 .invitation-card,
+  #page5 .invitation-card {
+    padding: 0.4rem 0.5rem;
+  }
 }
 
 .invitation-card.clickable-card {
@@ -378,19 +402,36 @@ body {
 
 /* Names Section - Mobile First */
 .names-section {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 0.8rem;
   text-align: right;
   flex-shrink: 0;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 2.5px;
-  margin: 0.1rem 0;
+  letter-spacing: 2px;
+  margin: 0.05rem 0;
   display: block;
   line-height: 1.1;
+}
+
+/* Mobile name optimizations */
+@media (max-width: 480px) {
+  .names-section {
+    margin-bottom: 0.6rem;
+  }
+
+  .name {
+    font-size: 2.2rem;
+    letter-spacing: 1.5px;
+    margin: 0.03rem 0;
+  }
+
+  .names-row .name {
+    font-size: 2.2rem;
+  }
 }
 
 .names-row {
@@ -435,16 +476,25 @@ body {
 
 /* Date and Venue Section - Mobile First */
 .date-venue-section {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
   margin-top: 0;
   position: relative;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
   text-align: center;
   flex: 1;
   justify-content: flex-start;
+}
+
+/* Mobile date/venue optimizations */
+@media (max-width: 480px) {
+  .date-venue-section {
+    margin-bottom: 0.05rem;
+    padding-bottom: 0.15rem;
+    gap: 0.1rem;
+  }
 }
 
 .date-time-group {
@@ -457,20 +507,33 @@ body {
 }
 
 .date {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   margin: 0;
   line-height: 1.1;
 }
 
 .time {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--secondary-color);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   font-weight: 400;
+}
+
+/* Mobile date/time optimizations */
+@media (max-width: 480px) {
+  .date {
+    font-size: 1.6rem;
+    letter-spacing: 1.2px;
+  }
+
+  .time {
+    font-size: 0.65rem;
+    letter-spacing: 0.6px;
+  }
 }
 
 .venue-group {
@@ -500,25 +563,39 @@ body {
 }
 
 .venue {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--primary-color);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.05rem;
 }
 
 .location {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: var(--secondary-color);
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   font-weight: 400;
 }
 
+/* Mobile venue optimizations */
+@media (max-width: 480px) {
+  .venue {
+    font-size: 0.8rem;
+    letter-spacing: 0.6px;
+    margin-bottom: 0.03rem;
+  }
+
+  .location {
+    font-size: 0.6rem;
+    letter-spacing: 0.6px;
+  }
+}
+
 /* Photo Gallery */
 .photo-gallery {
-  padding: var(--spacing-md);
+  padding: 0.6rem;
   background: var(--background-color);
   border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   position: relative;
@@ -528,13 +605,30 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   /* lowered so page 2 card height more closely matches page 1 */
-  min-height: 320px;
+  min-height: 280px;
+}
+
+/* Mobile photo gallery optimizations */
+@media (max-width: 480px) {
+  .photo-gallery {
+    padding: 0.4rem;
+    min-height: 240px;
+    background-size: 70%;
+    background-position: 90% 10%;
+  }
 }
 
 .photo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
+  gap: 0.6rem;
+}
+
+/* Mobile photo grid optimizations */
+@media (max-width: 480px) {
+  .photo-grid {
+    gap: 0.4rem;
+  }
 }
 
 .photo-item {
@@ -589,9 +683,16 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: var(--spacing-lg) auto 0;
+  margin: 0.8rem auto 0;
   position: relative;
   z-index: 10;
+}
+
+/* Mobile RSVP optimizations */
+@media (max-width: 480px) {
+  .rsvp-section {
+    margin: 0.6rem auto 0;
+  }
 }
 
 .rsvp-icon {
@@ -1447,7 +1548,7 @@ textarea:focus {
   max-width: 100%;
   width: 100%;
   color: var(--primary-color);
-  padding: 0 0.5rem;
+  padding: 0 0.3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -1455,12 +1556,26 @@ textarea:focus {
   overflow: hidden;
 }
 
+/* Mobile details content optimizations */
+@media (max-width: 480px) {
+  .details-content {
+    padding: 0 0.2rem;
+  }
+}
+
 /* Details Header */
 .details-header {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   position: relative;
   flex-shrink: 0;
+}
+
+/* Mobile details header optimizations */
+@media (max-width: 480px) {
+  .details-header {
+    margin-bottom: 0.2rem;
+  }
 }
 
 .the-text {
@@ -1492,10 +1607,18 @@ textarea:focus {
 
 /* Details Sections */
 .details-section {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
   position: relative;
-  padding: 0.1rem 0;
+  padding: 0.05rem 0;
   flex-shrink: 0;
+}
+
+/* Mobile details sections optimizations */
+@media (max-width: 480px) {
+  .details-section {
+    margin-bottom: 0.1rem;
+    padding: 0.03rem 0;
+  }
 }
 
 .section-title {
@@ -1617,13 +1740,24 @@ textarea:focus {
 /* Mobile-first responsive design for Page 3 */
 @media (max-width: 320px) {
   /* Extra small screens */
-  #page3 .invitation-card {
-    padding: 0.5rem;
-    margin: 0.25rem;
+  .invitation-page {
+    padding: 0.1rem;
+  }
+
+  .invitation-card {
+    padding: 0.3rem 0.4rem;
+    margin-bottom: 0.1rem;
+  }
+
+  #page2 .invitation-card,
+  #page3 .invitation-card,
+  #page4 .invitation-card,
+  #page5 .invitation-card {
+    padding: 0.3rem 0.4rem;
   }
 
   .details-content {
-    padding: 0 0.25rem;
+    padding: 0 0.15rem;
   }
 
   .the-text {
@@ -1665,12 +1799,24 @@ textarea:focus {
 
 @media (min-width: 321px) and (max-width: 480px) {
   /* Small mobile screens */
-  #page3 .invitation-card {
-    padding: 1rem 0.8rem;
+  .invitation-page {
+    padding: 0.15rem;
+  }
+
+  .invitation-card {
+    padding: 0.4rem 0.5rem;
+    margin-bottom: 0.15rem;
+  }
+
+  #page2 .invitation-card,
+  #page3 .invitation-card,
+  #page4 .invitation-card,
+  #page5 .invitation-card {
+    padding: 0.4rem 0.5rem;
   }
 
   .details-content {
-    padding: 0 0.5rem;
+    padding: 0 0.2rem;
   }
 
   .the-text {
@@ -1880,7 +2026,7 @@ textarea:focus {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   margin: 0.15rem 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-crimson);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -1918,7 +2064,7 @@ textarea:focus {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   margin: 0.15rem 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-crimson);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -1960,7 +2106,7 @@ textarea:focus {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   margin: 0.15rem 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-crimson);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -2002,6 +2148,7 @@ textarea:focus {
   .bearer-name,
   .flower-girl-name {
     font-size: 0.8rem;
+    font-family: var(--font-crimson);
   }
 
   .sponsor-names,
@@ -2026,6 +2173,7 @@ textarea:focus {
   .bearer-name,
   .flower-girl-name {
     font-size: 0.85rem;
+    font-family: var(--font-crimson);
   }
 
   .sponsor-names,
@@ -2201,12 +2349,19 @@ textarea:focus {
   max-width: 100%;
   width: 100%;
   color: var(--primary-color);
-  padding: 0 0.5rem;
+  padding: 0 0.3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+}
+
+/* Mobile wedding program optimizations */
+@media (max-width: 480px) {
+  .wedding-program-content {
+    padding: 0 0.2rem;
+  }
 }
 
 /* Program Title Section */
@@ -2306,7 +2461,7 @@ textarea:focus {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   margin: 0.15rem 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-crimson);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -2331,7 +2486,7 @@ textarea:focus {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   margin: 0.15rem 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-crimson);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -2369,7 +2524,7 @@ textarea:focus {
   color: var(--primary-color);
   letter-spacing: 0.5px;
   margin: 0.15rem 0;
-  font-family: var(--font-serif);
+  font-family: var(--font-crimson);
   font-weight: 400;
   line-height: 1.2;
 }
@@ -2396,6 +2551,7 @@ textarea:focus {
   .ninong-name,
   .party-name {
     font-size: 0.8rem;
+    font-family: var(--font-crimson);
   }
 
   .party-title {
@@ -2436,6 +2592,7 @@ textarea:focus {
   .ninong-name,
   .party-name {
     font-size: 0.85rem;
+    font-family: var(--font-crimson);
   }
 
   .party-title {
