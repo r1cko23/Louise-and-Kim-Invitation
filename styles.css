@@ -242,15 +242,17 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem;
+  padding: 0.5rem;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* Mobile-specific optimizations */
 @media (max-width: 480px) {
   .invitation-page {
-    padding: 0.25rem;
+    padding: 0.5rem;
     min-height: 100vh;
+    box-sizing: border-box;
   }
 }
 
@@ -268,9 +270,12 @@ body {
 /* Third page specific styling */
 #page3 .invitation-card {
   background: var(--background-color);
-  max-width: 100%;
-  width: 100%;
-  padding: var(--spacing-md) 0.8rem;
+  max-width: calc(100% - 1rem);
+  width: calc(100% - 1rem);
+  padding: 1rem 0.8rem;
+  box-sizing: border-box;
+  min-height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
 }
 
 /* Fourth page specific styling - Wedding Program */
@@ -282,9 +287,12 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   color: #2c2c2c;
-  max-width: 100%;
-  width: 100%;
-  padding: var(--spacing-md) 0.8rem;
+  max-width: calc(100% - 1rem);
+  width: calc(100% - 1rem);
+  padding: 1rem 0.8rem;
+  box-sizing: border-box;
+  min-height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
 }
 
 /* Fifth page specific styling - Wedding Program Details */
@@ -296,42 +304,56 @@ body {
   background-repeat: no-repeat;
   background-attachment: scroll;
   color: #2c2c2c;
-  max-width: 100%;
-  width: 100%;
-  padding: var(--spacing-md) 0.8rem;
+  max-width: calc(100% - 1rem);
+  width: calc(100% - 1rem);
+  padding: 1rem 0.8rem;
+  box-sizing: border-box;
+  min-height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
 }
 
 .invitation-card {
   background: var(--background-color);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
-  padding: 0.5rem 0.6rem;
-  max-width: 100%;
-  width: 100%;
+  padding: 1rem 0.8rem;
+  max-width: calc(100% - 1rem);
+  width: calc(100% - 1rem);
   position: relative;
   background-image: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   margin-bottom: 0.25rem;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: calc(100vh - 2rem);
+  max-height: calc(100vh - 2rem);
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
 /* Mobile card optimizations */
 @media (max-width: 480px) {
   .invitation-card {
-    padding: 0.6rem 0.8rem;
+    padding: 1rem 0.8rem;
     margin-bottom: 0.25rem;
     border-radius: 8px;
+    max-width: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    box-sizing: border-box;
+    min-height: calc(100vh - 2rem);
+    max-height: calc(100vh - 2rem);
   }
 
   #page2 .invitation-card,
   #page3 .invitation-card,
   #page4 .invitation-card,
   #page5 .invitation-card {
-    padding: 0.6rem 0.8rem;
+    padding: 1rem 0.8rem;
+    max-width: calc(100% - 1rem);
+    width: calc(100% - 1rem);
+    box-sizing: border-box;
+    min-height: calc(100vh - 2rem);
+    max-height: calc(100vh - 2rem);
   }
 }
 
@@ -396,7 +418,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0.5rem 0;
 }
 
@@ -424,13 +446,68 @@ body {
   }
 
   .name {
-    font-size: 3rem;
+    font-size: 3.5rem;
     letter-spacing: 2px;
     margin: 0.1rem 0;
   }
 
   .names-row .name {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+}
+
+/* iPhone 13 Pro Max and larger mobile screens */
+@media (max-width: 480px) and (min-height: 800px) {
+  .name {
+    font-size: 4rem;
+    letter-spacing: 2.5px;
+  }
+
+  .names-row .name {
+    font-size: 4rem;
+  }
+
+  .date {
+    font-size: 2.8rem;
+    letter-spacing: 2.5px;
+  }
+
+  .time {
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+  }
+
+  .venue {
+    font-size: 1.2rem;
+    letter-spacing: 1.2px;
+  }
+
+  .location {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .request-text p {
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* Page 3 iPhone 13 Pro Max optimizations */
+  .the-text {
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+  }
+
+  .details-title {
+    font-size: 3.2rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-content {
+    font-size: 1rem;
   }
 }
 
@@ -526,12 +603,12 @@ body {
 /* Mobile date/time optimizations */
 @media (max-width: 480px) {
   .date {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     letter-spacing: 2px;
   }
 
   .time {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
   }
 }
@@ -582,13 +659,13 @@ body {
 /* Mobile venue optimizations */
 @media (max-width: 480px) {
   .venue {
-    font-size: 1rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
     margin-bottom: 0.1rem;
   }
 
   .location {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.8px;
   }
 }
@@ -604,15 +681,12 @@ body {
   background-position: 85% 15%;
   background-repeat: no-repeat;
   background-attachment: scroll;
-  /* lowered so page 2 card height more closely matches page 1 */
-  min-height: 280px;
 }
 
 /* Mobile photo gallery optimizations */
 @media (max-width: 480px) {
   .photo-gallery {
     padding: 0.6rem;
-    min-height: 280px;
     background-size: 75%;
     background-position: 90% 10%;
   }
@@ -1550,25 +1624,44 @@ textarea:focus {
   max-width: 100%;
   width: 100%;
   color: var(--primary-color);
-  padding: 0 0.3rem;
+  padding: 1rem 0.3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Mobile details content optimizations */
 @media (max-width: 480px) {
   .details-content {
-    padding: 0 0.2rem;
+    padding: 0.8rem 0.2rem;
+  }
+
+  .the-text {
+    font-size: 1.4rem;
+    color: var(--secondary-color);
+  }
+
+  .details-title {
+    font-size: 2.8rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .section-content {
+    font-size: 0.9rem;
   }
 }
 
 /* Details Header */
 .details-header {
   text-align: left;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
   position: relative;
   flex-shrink: 0;
 }
@@ -1576,17 +1669,16 @@ textarea:focus {
 /* Mobile details header optimizations */
 @media (max-width: 480px) {
   .details-header {
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem;
   }
 }
 
 .the-text {
   font-family: var(--font-slight);
   font-size: 1.2rem;
-  color: var(--primary-color);
+  color: var(--secondary-color);
   margin-bottom: 0.1rem;
   position: relative;
-  right: 0.3rem;
   font-weight: 400;
   font-style: normal;
   text-align: left;
@@ -1602,25 +1694,29 @@ textarea:focus {
 
 .details-rule {
   width: 60%;
-  margin: 0 0 0 0;
+  margin: 0.5rem 0 0 0;
   border: none;
-  border-top: 1px solid var(--primary-color);
-  opacity: 0.6;
+  border-top: 1px solid var(--secondary-color);
+  opacity: 0.4;
 }
 
 /* Details Sections */
 .details-section {
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.3rem;
   position: relative;
-  padding: 0.05rem 0;
+  padding: 0.1rem 0;
   flex-shrink: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 90%;
 }
 
 /* Mobile details sections optimizations */
 @media (max-width: 480px) {
   .details-section {
-    margin-bottom: 0.1rem;
-    padding: 0.03rem 0;
+    margin-bottom: 0.2rem;
+    padding: 0.05rem 0;
+    max-width: 95%;
   }
 }
 
@@ -1650,15 +1746,15 @@ textarea:focus {
   font-weight: 700;
 }
 
-/* Attire Section - Left Aligned */
+/* Attire Section - Centered */
 .attire-section {
-  text-align: left;
+  text-align: center;
   position: relative;
   margin-bottom: 0.3rem;
 }
 
 .attire-section .section-title {
-  text-align: left;
+  text-align: center;
 }
 
 /* Color Palette Logo - Right side of Attire */
@@ -1677,26 +1773,26 @@ textarea:focus {
   opacity: 0.9;
 }
 
-/* Ceremony & Reception Section - Left Aligned */
+/* Ceremony & Reception Section - Centered */
 .ceremony-section {
-  text-align: left;
+  text-align: center;
   margin: 0.3rem 0;
   position: relative;
 }
 
 .ceremony-section .section-title {
-  text-align: left;
+  text-align: center;
 }
 
-/* Gifts Section - Left Aligned */
+/* Gifts Section - Centered */
 .gifts-section {
-  text-align: left;
+  text-align: center;
   position: relative;
   margin-bottom: 0.3rem;
 }
 
 .gifts-section .section-title {
-  text-align: left;
+  text-align: center;
 }
 
 /* Flower Decoration - Left side of Important Note */
@@ -1714,15 +1810,15 @@ textarea:focus {
   opacity: 0.9;
 }
 
-/* Important Note Section - Left Aligned */
+/* Important Note Section - Centered */
 .important-section {
-  text-align: left;
+  text-align: center;
   margin-top: 0.3rem;
   position: relative;
 }
 
 .important-section .section-title {
-  text-align: left;
+  text-align: center;
 }
 
 /* Flower Decoration for Page 4 - Wedding Party Section */
@@ -2352,18 +2448,20 @@ textarea:focus {
   max-width: 100%;
   width: 100%;
   color: var(--primary-color);
-  padding: 0 0.3rem;
+  padding: 1rem 0.3rem;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Mobile wedding program optimizations */
 @media (max-width: 480px) {
   .wedding-program-content {
-    padding: 0 0.2rem;
+    padding: 0.8rem 0.2rem;
   }
 }
 
