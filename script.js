@@ -229,17 +229,19 @@ function prepareRSVPData(formData) {
 // API integration for RSVP submissions
 async function submitRSVP(data) {
   try {
-    const response = await fetch('/api/rsvp', {
-      method: 'POST',
+    const response = await fetch("/api/rsvp", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      throw new Error(
+        errorData.message || `HTTP error! status: ${response.status}`
+      );
     }
 
     const result = await response.json();
