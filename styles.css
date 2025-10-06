@@ -39,6 +39,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Burgues Script";
+  src: url("Burgues Script W00 Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* CSS Custom Properties */
 :root {
   /* Colors */
@@ -54,6 +62,7 @@
   --font-main: "Open Sans", sans-serif;
   --font-serif: "The Seasons", "Playfair Display", serif;
   --font-script: "Dancing Script", cursive;
+  --font-burgues: "Burgues Script", cursive;
 
   /* Shadows */
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -125,6 +134,9 @@ body {
 }
 .font-script {
   font-family: var(--font-script);
+}
+.font-burgues {
+  font-family: var(--font-burgues);
 }
 
 .bg-primary {
@@ -2200,6 +2212,16 @@ textarea:focus {
   margin-left: 0;
 }
 
+.program-surname.font-burgues {
+  font-family: var(--font-burgues);
+  font-size: 2.2rem;
+  font-style: normal;
+  margin-bottom: 0.1rem;
+  align-self: flex-start;
+  margin-left: 0;
+  font-weight: 400;
+}
+
 .program-surname.font-serif {
   font-family: var(--font-serif);
   font-size: 2.2rem;
@@ -2332,6 +2354,10 @@ textarea:focus {
     font-size: 2.2rem;
   }
 
+  .program-surname.font-burgues {
+    font-size: 2.8rem;
+  }
+
   .program-surname.font-serif {
     font-size: 3.2rem;
   }
@@ -2366,6 +2392,10 @@ textarea:focus {
 @media (min-width: 769px) {
   .program-surname.font-script {
     font-size: 2.5rem;
+  }
+
+  .program-surname.font-burgues {
+    font-size: 3.2rem;
   }
 
   .program-surname.font-serif {
