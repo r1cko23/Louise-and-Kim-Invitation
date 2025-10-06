@@ -423,13 +423,46 @@ body {
 
 /* iPhone 13 Pro Max and larger mobile screens */
 @media (max-width: 480px) and (min-height: 800px) {
+  .names-section {
+    text-align: right;
+    padding-right: 1.5rem;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    width: auto;
+    margin-bottom: 0;
+  }
+
   .name {
-    font-size: 4rem;
+    font-size: 4.5rem;
     letter-spacing: 2.5px;
+    text-align: right;
+    margin: -1rem 0;
+  }
+
+  .names-row {
+    justify-content: flex-end;
+    margin: 0.05rem 0;
   }
 
   .names-row .name {
     font-size: 4rem;
+    text-align: right;
+    margin: 0;
+  }
+
+  .names-row .name:last-child {
+    padding-right: 0rem;
+    margin-right: -0.2rem;
+  }
+
+  .and {
+    font-size: 3rem;
+    margin-bottom: -0.8rem;
+  }
+
+  .invitation-content {
+    position: relative;
   }
 
   .date {
@@ -439,22 +472,41 @@ body {
 
   .time {
     font-size: 1rem;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.8px;
+    text-align: right;
+    margin-right: 0.5rem;
   }
 
   .venue {
-    font-size: 1.2rem;
-    letter-spacing: 1.2px;
+    font-size: 0.8rem !important;
+    letter-spacing: 6px !important;
+    position: relative;
+    top: 4rem;
+    left: -3.2rem;
   }
 
   .location {
     font-size: 0.9rem;
     letter-spacing: 1px;
+    position: relative;
+    top: 3.8rem;
+    left: -3.3rem;
   }
 
   .request-text p {
     font-size: 1.1rem;
     letter-spacing: 1.5px;
+  }
+
+  .floral-decoration {
+    bottom: 1.5rem;
+    margin-right: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .floral-decoration .flower-image {
+    width: 100px;
+    height: 150px;
   }
 
   /* Page 3 iPhone 13 Pro Max optimizations */
@@ -485,33 +537,36 @@ body {
 }
 
 .and {
-  font-size: 1.8rem;
+  font-size: 3rem;
   color: var(--primary-color);
-  margin: 0;
+  margin-right: 2rem;
+  margin-bottom: -1.1rem;
   font-weight: 400;
   font-style: normal;
 }
 
 .names-row .name {
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 4.5rem;
 }
 
 /* Request Text - Mobile First */
 .request-text {
-  margin: 1.5rem 0;
-  text-align: center;
+  margin-right: -1.7rem;
+  margin-top: 15rem;
+  text-align: right;
   flex-shrink: 0;
 }
 
 .request-text p {
-  font-size: 0.85rem;
+  font-size: 2rem;
   color: var(--secondary-color);
   letter-spacing: 1.5px;
   line-height: 1.6;
   text-transform: uppercase;
-  margin: 0.3rem 0;
+  margin: 0.5rem 0;
   font-weight: 400;
+  margin-top: -0.6rem;
 }
 
 /* Date and Venue Section - Mobile First */
@@ -551,17 +606,19 @@ body {
 /* Mobile date/time optimizations */
 @media (max-width: 480px) {
   .date {
-    font-size: 2.2rem;
+    font-size: 3.6rem;
     letter-spacing: 2px;
+    margin-top: -3rem;
+    text-align: right;
   }
 
   .time {
-    font-size: 0.7rem;
-    letter-spacing: 0.8px;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
   }
 
   .request-text p {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 1.2px;
   }
 
@@ -574,8 +631,7 @@ body {
 .venue-group {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  text-align: center;
+  text-align: right;
 }
 
 .venue {
@@ -613,7 +669,7 @@ body {
 }
 
 /* Mobile venue optimizations */
-@media (max-width: 480px) {
+@media (max-width: 480px) and (max-height: 799px) {
   .venue {
     font-size: 0.95rem;
     letter-spacing: 0.8px;
@@ -1251,34 +1307,52 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.5rem;
+    gap: 2.5rem;
   }
 
   .date-time-group {
     flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   .venue-group {
     flex: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    margin-top: 1rem;
   }
 
   .date {
-    font-size: 2.8rem;
+    font-size: 5rem;
     letter-spacing: 3px;
+    margin-bottom: 0;
   }
 
   .time {
     font-size: 0.9rem;
+    margin-top: 0;
   }
 
   .venue {
     font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0;
   }
 
   .location {
     font-size: 0.85rem;
+    display: block;
+    margin-top: 0;
   }
 
   .floral-decoration {
@@ -1289,32 +1363,8 @@ body {
   }
 
   .flower-image {
-    width: 80px;
-  }
-
-  /* On tablet and up, fix the venue at the bottom center and add spacing above it so date/time won't overlap */
-  .venue-group {
-    position: absolute;
-    bottom: 1.2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(78%, 420px);
-    text-align: center;
-  }
-
-  /* slightly more space between venue title and location */
-  .venue {
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
-  .location {
-    display: block;
-    margin-top: 0.4rem;
-  }
-
-  .date-time-group {
-    margin-bottom: var(--spacing-xl);
+    width: 100px;
+    height: auto;
   }
 
   .the-text {
@@ -1469,7 +1519,7 @@ body {
   }
 
   .date-venue-section {
-    gap: 3.5rem;
+    gap: 3rem;
     /* ensure stacked, center-aligned layout on desktop */
     flex-direction: column;
     align-items: center;
@@ -1477,39 +1527,49 @@ body {
   }
 
   .date-time-group {
-    gap: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    position: relative;
   }
 
   .venue-group {
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    margin-top: 1.5rem;
   }
 
   .date {
     font-size: 4rem;
     letter-spacing: 6px;
     line-height: 1.4;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .time {
     font-size: 1.15rem;
-    margin-top: 1rem;
+    margin-top: 0;
     letter-spacing: 0.5px;
   }
 
   .venue {
     font-size: 1.4rem;
     letter-spacing: 1.5px;
-    margin-bottom: 0.5rem;
-  }
-
-  .location {
-    font-size: 1rem;
-    line-height: 1.8;
+    margin-bottom: 0;
   }
 
   .location {
     font-size: 0.9rem;
+    line-height: 1.8;
+    margin-top: 0;
   }
 
   .floral-decoration {
@@ -1519,7 +1579,8 @@ body {
   }
 
   .flower-image {
-    width: 120px;
+    width: 140px;
+    height: auto;
   }
 
   .the-text {
@@ -2531,5 +2592,83 @@ textarea:focus {
 
   .wedding-party-grid {
     max-width: 500px;
+  }
+}
+
+/* ============================================================
+   MUSIC TOGGLE BUTTON
+   ============================================================ */
+
+.music-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b4513, #654321);
+  border: 3px solid #fff;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  outline: none;
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(139, 69, 19, 0.5);
+  background: linear-gradient(135deg, #a0522d, #8b4513);
+}
+
+.music-toggle:active {
+  transform: scale(0.95);
+}
+
+.music-toggle i {
+  pointer-events: none;
+}
+
+/* Pulse animation for when autoplay is blocked */
+.music-toggle.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.4);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(139, 69, 19, 0.6);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .music-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* Ensure button doesn't interfere with other content */
+@media (max-width: 480px) {
+  .music-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+    bottom: 1rem;
+    right: 1rem;
   }
 }

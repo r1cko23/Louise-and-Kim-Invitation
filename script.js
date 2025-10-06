@@ -4,6 +4,7 @@
 let currentPage = 1;
 const totalPages = 5;
 let musicStarted = false;
+let musicPlaying = false;
 
 // Configuration
 const CONFIG = {
@@ -22,47 +23,108 @@ function initializeApp() {
   // Set up keyboard navigation
   setupKeyboardNavigation();
 
-  // Set up music
+  // Set up music - THIS MUST BE CALLED FIRST
   setupMusic();
 
   // Initialize page display
   showPage(1);
 }
 
-// Music setup function
+// Enhanced Music setup function
 function setupMusic() {
   const audio = document.getElementById("weddingMusic");
-  if (audio) {
-    // Try to play music on first user interaction
-    const startMusic = () => {
-      if (!musicStarted) {
-        audio.play().catch((error) => {
-          console.log("Music autoplay prevented:", error);
-        });
-        musicStarted = true;
-      }
-    };
+  const musicToggle = document.getElementById("musicToggle");
+  const musicIcon = document.getElementById("musicIcon");
 
-    // Add click listeners to start music
-    document.addEventListener("click", startMusic, { once: true });
-    document.addEventListener("touchstart", startMusic, { once: true });
-    document.addEventListener("keydown", startMusic, { once: true });
+  if (!audio) return;
+
+  // Attempt to play music immediately
+  const attemptAutoplay = () => {
+    audio
+      .play()
+      .then(() => {
+        console.log("Music started successfully");
+        musicStarted = true;
+        musicPlaying = true;
+        updateMusicIcon(true);
+      })
+      .catch((error) => {
+        console.log("Autoplay prevented, waiting for user interaction:", error);
+        // Show music button prominently if autoplay fails
+        if (musicToggle) {
+          musicToggle.classList.add("pulse");
+        }
+      });
+  };
+
+  // Try to play immediately
+  attemptAutoplay();
+
+  // Also try on any user interaction
+  const startMusicOnInteraction = () => {
+    if (!musicStarted) {
+      attemptAutoplay();
+    }
+  };
+
+  // Add listeners for various user interactions
+  document.addEventListener("click", startMusicOnInteraction, { once: true });
+  document.addEventListener("touchstart", startMusicOnInteraction, {
+    once: true,
+  });
+  document.addEventListener("touchend", startMusicOnInteraction, {
+    once: true,
+  });
+  document.addEventListener("keydown", startMusicOnInteraction, { once: true });
+
+  // Listen for when audio actually starts playing
+  audio.addEventListener("play", () => {
+    musicPlaying = true;
+    musicStarted = true;
+    updateMusicIcon(true);
+    if (musicToggle) {
+      musicToggle.classList.remove("pulse");
+    }
+  });
+
+  audio.addEventListener("pause", () => {
+    musicPlaying = false;
+    updateMusicIcon(false);
+  });
+
+  // Music toggle button functionality
+  if (musicToggle) {
+    musicToggle.addEventListener("click", toggleMusic);
+  }
+
+  function toggleMusic(event) {
+    if (event) {
+      event.stopPropagation();
+    }
+
+    if (musicPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch((error) => {
+        console.error("Error playing music:", error);
+        alert("Unable to play music. Please check your browser settings.");
+      });
+    }
+  }
+
+  function updateMusicIcon(isPlaying) {
+    if (musicIcon) {
+      if (isPlaying) {
+        musicIcon.className = "fa-solid fa-volume-high";
+      } else {
+        musicIcon.className = "fa-solid fa-volume-xmark";
+      }
+    }
   }
 }
 
 // Page navigation functions
 function showPage(pageNumber) {
-  // Start music on first page interaction
-  if (!musicStarted) {
-    const audio = document.getElementById("weddingMusic");
-    if (audio) {
-      audio.play().catch((error) => {
-        console.log("Music autoplay prevented:", error);
-      });
-      musicStarted = true;
-    }
-  }
-
   // Hide all pages
   const pages = document.querySelectorAll(".invitation-page");
   pages.forEach((page) => {

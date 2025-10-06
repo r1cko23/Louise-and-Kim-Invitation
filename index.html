@@ -58,10 +58,15 @@
   </head>
   <body>
     <!-- Background Music -->
-    <audio id="weddingMusic" loop autoplay>
+    <audio id="weddingMusic" loop autoplay preload="auto">
       <source src="Wedding Sound.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
+
+    <!-- Music Control Button -->
+    <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+      <i class="fa-solid fa-volume-high" id="musicIcon"></i>
+    </button>
 
     <!-- Page 1: Main Invitation -->
     <div class="invitation-page" id="page1">
@@ -162,7 +167,7 @@
           <div class="details-section attire-section">
             <h3 class="section-title font-serif">ATTIRE</h3>
             <div class="section-content font-crimson">
-              <p>Kindly wear semi formal attire.</p>
+              <p>Kindly wear formal attire.</p>
               <p><strong>GENTLEMEN:</strong> LONG SLEEVES AND BLACK SLACKS</p>
               <p><strong>LADIES:</strong> LONG GOWN OR DRESS</p>
               <p>
