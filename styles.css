@@ -47,6 +47,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Slight";
+  src: url("Slight-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* CSS Custom Properties */
 :root {
   /* Colors */
@@ -63,6 +71,8 @@
   --font-serif: "The Seasons", "Playfair Display", serif;
   --font-script: "Dancing Script", cursive;
   --font-burgues: "Burgues Script", cursive;
+  --font-slight: "Slight", sans-serif;
+  --font-crimson: "Crimson Pro", serif;
 
   /* Shadows */
   --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -137,6 +147,12 @@ body {
 }
 .font-burgues {
   font-family: var(--font-burgues);
+}
+.font-slight {
+  font-family: var(--font-slight);
+}
+.font-crimson {
+  font-family: var(--font-crimson);
 }
 
 .bg-primary {
@@ -390,7 +406,7 @@ body {
   color: var(--primary-color);
   margin: 0;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
 }
 
 .names-row .name {
@@ -1062,6 +1078,10 @@ body {
     font-size: 1.4rem;
   }
 
+  .the-text {
+    font-size: 1.4rem;
+  }
+
   .request-text p {
     font-size: 1rem;
   }
@@ -1264,6 +1284,10 @@ body {
     font-size: 1.6rem;
   }
 
+  .the-text {
+    font-size: 1.6rem;
+  }
+
   .request-text p {
     font-size: 1.1rem;
   }
@@ -1440,12 +1464,14 @@ textarea:focus {
 }
 
 .the-text {
-  font-family: var(--font-script);
+  font-family: var(--font-slight);
   font-size: 1rem;
   color: var(--primary-color);
   margin-bottom: 0.05rem;
   position: relative;
   right: 0.3rem;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .details-title {

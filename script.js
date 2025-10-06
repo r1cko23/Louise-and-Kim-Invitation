@@ -203,7 +203,7 @@ async function handleFormSubmission(event) {
 }
 
 function validateForm(formData) {
-  const requiredFields = ["guestName", "attendance"];
+  const requiredFields = ["guestName", "phone", "attendance"];
 
   for (const field of requiredFields) {
     if (!formData.get(field) || formData.get(field).trim() === "") {
