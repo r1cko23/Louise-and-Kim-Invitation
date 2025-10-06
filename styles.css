@@ -1628,8 +1628,8 @@ textarea:focus {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -1638,6 +1638,8 @@ textarea:focus {
 @media (max-width: 480px) {
   .details-content {
     padding: 0.8rem 0.2rem;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .the-text {
