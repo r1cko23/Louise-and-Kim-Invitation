@@ -1412,11 +1412,11 @@ body {
   }
 
   .ceremony-section {
-    text-align: left;
+    text-align: right;
   }
 
   .ceremony-section .section-title {
-    text-align: left;
+    text-align: right;
   }
 
   .gifts-section {
@@ -1428,11 +1428,11 @@ body {
   }
 
   .important-section {
-    text-align: left;
+    text-align: right;
   }
 
   .important-section .section-title {
-    text-align: left;
+    text-align: right;
   }
 }
 
@@ -1576,11 +1576,11 @@ body {
   }
 
   .ceremony-section {
-    text-align: left;
+    text-align: right;
   }
 
   .ceremony-section .section-title {
-    text-align: left;
+    text-align: right;
   }
 
   .gifts-section {
@@ -1592,11 +1592,11 @@ body {
   }
 
   .important-section {
-    text-align: left;
+    text-align: right;
   }
 
   .important-section .section-title {
-    text-align: left;
+    text-align: right;
   }
 }
 
@@ -1706,7 +1706,6 @@ textarea:focus {
   position: relative;
   padding: 0.1rem 0;
   flex-shrink: 0;
-  text-align: center;
   width: 100%;
   max-width: 90%;
 }
@@ -1746,15 +1745,15 @@ textarea:focus {
   font-weight: 700;
 }
 
-/* Attire Section - Centered */
+/* Attire Section - Left Aligned */
 .attire-section {
-  text-align: center;
+  text-align: left;
   position: relative;
   margin-bottom: 0.3rem;
 }
 
 .attire-section .section-title {
-  text-align: center;
+  text-align: left;
 }
 
 /* Color Palette Logo - Right side of Attire */
@@ -1773,26 +1772,26 @@ textarea:focus {
   opacity: 0.9;
 }
 
-/* Ceremony & Reception Section - Centered */
+/* Ceremony & Reception Section - Right Aligned */
 .ceremony-section {
-  text-align: center;
+  text-align: right;
   margin: 0.3rem 0;
   position: relative;
 }
 
 .ceremony-section .section-title {
-  text-align: center;
+  text-align: right;
 }
 
-/* Gifts Section - Centered */
+/* Gifts Section - Left Aligned */
 .gifts-section {
-  text-align: center;
+  text-align: left;
   position: relative;
   margin-bottom: 0.3rem;
 }
 
 .gifts-section .section-title {
-  text-align: center;
+  text-align: left;
 }
 
 /* Flower Decoration - Left side of Important Note */
@@ -1810,15 +1809,15 @@ textarea:focus {
   opacity: 0.9;
 }
 
-/* Important Note Section - Centered */
+/* Important Note Section - Right Aligned */
 .important-section {
-  text-align: center;
+  text-align: right;
   margin-top: 0.3rem;
   position: relative;
 }
 
 .important-section .section-title {
-  text-align: center;
+  text-align: right;
 }
 
 /* Flower Decoration for Page 4 - Wedding Party Section */
@@ -1984,11 +1983,11 @@ textarea:focus {
   }
 
   .ceremony-section {
-    text-align: left;
+    text-align: right;
   }
 
   .ceremony-section .section-title {
-    text-align: left;
+    text-align: right;
   }
 
   .gifts-section {
@@ -2000,11 +1999,11 @@ textarea:focus {
   }
 
   .important-section {
-    text-align: left;
+    text-align: right;
   }
 
   .important-section .section-title {
-    text-align: left;
+    text-align: right;
   }
 }
 
