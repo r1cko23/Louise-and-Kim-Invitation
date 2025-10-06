@@ -43,9 +43,16 @@ export default async function handler(req, res) {
     };
 
     // Send data to Google Sheets via Google Apps Script
-    const googleSheetsUrl =
-      process.env.GOOGLE_SHEETS_URL ||
-      "https://script.google.com/macros/s/AKfycbwfqFxoap2pk-hQo8gaX31pFgDbQ9ONy49nrVR9xfm6GJDHHrjvSltcOIpugxZSpLxV/exec";
+    const googleSheetsUrl = process.env.GOOGLE_SHEETS_URL;
+
+    if (!googleSheetsUrl) {
+      console.error("GOOGLE_SHEETS_URL environment variable is not set");
+      return res.status(500).json({
+        error: "Server configuration error",
+        message:
+          "RSVP service is not properly configured. Please contact support.",
+      });
+    }
 
     try {
       const sheetsResponse = await fetch(googleSheetsUrl, {
