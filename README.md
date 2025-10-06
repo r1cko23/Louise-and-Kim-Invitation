@@ -68,12 +68,35 @@ const GOOGLE_SHEETS_URL =
 
 ### 3. Deploy the Website
 
-You can host this website on any web hosting service:
+This project is optimized for **Vercel** deployment and includes all necessary configuration files:
+
+#### Quick Vercel Deployment (Recommended)
+
+1. **Push to Git repository**
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Deploy to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your Git repository
+   - Vercel will auto-detect the configuration
+   - Click "Deploy"
+
+3. **Your site is live!**
+   - Available at `https://your-project-name.vercel.app`
+   - Automatic HTTPS and CDN
+   - Global edge locations for fast loading
+
+#### Other Hosting Options
 
 - **GitHub Pages** (free)
 - **Netlify** (free tier available)
-- **Vercel** (free tier available)
 - **Traditional web hosting** (upload files via FTP)
+
+> **Note**: For detailed Vercel deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md)
 
 ### 4. Test the Setup
 
@@ -90,10 +113,24 @@ You can host this website on any web hosting service:
 ├── index.html              # Main HTML file
 ├── styles.css              # CSS styles
 ├── script.js               # JavaScript functionality
-├── google-apps-script.js   # Google Apps Script code
+├── package.json            # Project metadata
+├── vercel.json             # Vercel configuration
+├── .gitignore              # Git ignore rules
+├── favicon.svg             # Website favicon
+├── api/
+│   └── rsvp.js            # RSVP API endpoint
+├── assets/                 # Static assets
+│   ├── pic1.jpg           # Wedding photos
+│   ├── pic2.jpg
+│   ├── pic3.jpg
+│   ├── pic4.jpg
+│   ├── Flower.png         # Floral decorations
+│   ├── Flower2.png
+│   ├── colore_palette.png # Color palette
+│   ├── Wedding Sound.mp3  # Background music
+│   └── Fontspring-DEMO-theseasons-*.otf # Custom fonts
 ├── README.md              # This file
-└── Copy of White and Black Simple Minimalist Floral Wedding Invitation (1-5).png
-    # Wedding photos for the gallery
+└── DEPLOYMENT.md          # Deployment guide
 ```
 
 ## Customization

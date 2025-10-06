@@ -1,0 +1,33 @@
+{
+  "name": "louise-kim-wedding-invitation",
+  "version": "1.0.0",
+  "description": "A beautiful, responsive wedding invitation website with RSVP functionality for Louise and Kim's wedding celebration",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "wedding",
+    "invitation",
+    "rsvp",
+    "responsive",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Wedding Invitation Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/louise-kim-wedding-invitation.git"
+  },
+  "homepage": "https://louise-kim-wedding.vercel.app",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}

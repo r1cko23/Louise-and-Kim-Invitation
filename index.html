@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wedding Invitation for Louise and Kim - December 1, 2025"
+      content="Wedding Invitation for Louise and Kim - December 1, 2025 at Timmy in the Woods, Antipolo City, Rizal"
     />
-    <title>Louise & Kim - Wedding Invitation</title>
+    <meta name="keywords" content="wedding, invitation, Louise, Kim, December 2025, Timmy in the Woods, Antipolo, Rizal" />
+    <meta name="author" content="Louise & Kim Wedding" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Louise & Kim - Wedding Invitation" />
+    <meta property="og:description" content="Join us for our special day on December 1, 2025 at Timmy in the Woods, Antipolo City, Rizal" />
+    <meta property="og:image" content="/pic1.jpg" />
+    <meta property="og:url" content="https://louise-kim-wedding.vercel.app" />
+    <meta property="og:site_name" content="Louise & Kim Wedding" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Louise & Kim - Wedding Invitation" />
+    <meta property="twitter:description" content="Join us for our special day on December 1, 2025 at Timmy in the Woods, Antipolo City, Rizal" />
+    <meta property="twitter:image" content="/pic1.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <title>Louise & Kim - Wedding Invitation | December 1, 2025</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,6 +45,12 @@
     />
   </head>
   <body>
+    <!-- Background Music -->
+    <audio id="weddingMusic" loop autoplay>
+      <source src="Wedding Sound.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
     <!-- Page 1: Main Invitation -->
     <div class="invitation-page" id="page1">
       <div class="invitation-card clickable-card" onclick="showPage2()">
@@ -102,6 +129,7 @@
               onclick="openRSVPForm(event)"
               aria-label="Open RSVP form"
             >
+              <i class="fa-solid fa-envelope-open rsvp-btn-icon"></i>
               <span class="font-serif">RSVP HERE</span>
             </button>
           </div>
@@ -148,7 +176,7 @@
             <div class="section-content font-serif">
               <p>
                 We expect you to arrive 30 minutes earlier before the ceremony,
-                which begins at 3 o'clock. A dinner will follow right after. To
+                which begins at 3 o clock. A dinner will follow right after. To
                 end the night, we'd love for you to take a dip in the pool with
                 us—formal wear and all.
               </p>
@@ -189,32 +217,154 @@
       </div>
     </div>
 
-    <!-- Page 4: Formal Invitation -->
+    <!-- Page 4: Wedding Program -->
     <div class="invitation-page" id="page4" style="display: none">
+      <div class="invitation-card clickable-card" onclick="showPage5()">
+        <div class="wedding-program-content">
+          <!-- Main Title -->
+          <div class="program-title-section">
+            <h1 class="program-surname font-script">Magdaluyo</h1>
+            <h1 class="program-surname font-serif">CONTE</h1>
+            <hr class="program-title-rule" />
+          </div>
+
+          <!-- Our Beloved Parents Section -->
+          <div class="program-section parents-section">
+            <h2 class="section-title font-serif">OUR BELOVED PARENTS</h2>
+            <div class="parents-grid">
+              <div class="parent-column">
+                <p class="parent-name font-serif">MR. MELCHIZEDEC CONTE</p>
+                <p class="parent-name font-serif">MRS. MARITES CONTE</p>
+              </div>
+              <div class="parent-column">
+                <p class="parent-name font-serif">MR. ARIEL MAGDALUYO</p>
+                <p class="parent-name font-serif">MRS. VILMA MAGDALUYO</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Our Ninongs & Ninangs Section -->
+          <div class="program-section ninongs-section">
+            <h2 class="section-title font-serif">OUR NINONGS AND NINANGS</h2>
+            <div class="ninongs-list">
+              <p class="ninong-name font-serif">MR. DIOSDADO LEONARDO</p>
+              <p class="ninong-name font-serif">MR. VICENTE ARNANTE</p>
+              <p class="ninong-name font-serif">MR. JOEL MALLARI</p>
+              <p class="ninong-name font-serif">MR. ALBERT FLORES</p>
+              <p class="ninong-name font-serif">MRS. GENEVIEVE LEONARDO</p>
+              <p class="ninong-name font-serif">MRS. BERNADINE ARNANTE</p>
+              <p class="ninong-name font-serif">
+                MRS. CHARMANE DIOSETH RUBY MALLARI
+              </p>
+              <p class="ninong-name font-serif">MRS. KAREN FLORES</p>
+              <p class="ninong-name font-serif">MS. EDNA ATIENZA</p>
+            </div>
+          </div>
+
+          <!-- Maid of Honor & Best Man Section -->
+          <div class="program-section wedding-party-section">
+            <div class="wedding-party-grid">
+              <div class="wedding-party-column">
+                <h3 class="party-title font-serif">MAID OF HONOR</h3>
+                <p class="party-name font-serif">
+                  MS. CZARINA HANNAH CIELLE CONTE
+                </p>
+              </div>
+              <div class="wedding-party-column">
+                <h3 class="party-title font-serif">BEST MAN</h3>
+                <p class="party-name font-serif">MR. IVERT WALEY PALANG</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 5: Wedding Program Details -->
+    <div class="invitation-page" id="page5" style="display: none">
       <div class="invitation-card clickable-card" onclick="showPage1()">
-        <div class="formal-invitation-content">
-          <!-- Names Section -->
-          <div class="formal-names-section">
-            <h1 class="formal-name font-serif">LOUISE</h1>
-            <h1 class="formal-name font-serif">KIM</h1>
+        <div class="wedding-program-content">
+          <!-- Main Title -->
+          <div class="program-title-section">
+            <h1 class="program-surname font-script">Magdaluyo</h1>
+            <h1 class="program-surname font-serif">CONTE</h1>
+            <hr class="program-title-rule" />
           </div>
 
-          <!-- Request Text -->
-          <div class="formal-request-text">
-            <p class="font-serif">REQUEST THE HONOR OF YOUR PRESENCE</p>
-            <p class="font-serif">AT THEIR WEDDING CELEBRATION</p>
+          <!-- Principal Sponsors Section -->
+          <div class="program-section principal-sponsors-section">
+            <div class="sponsor-group">
+              <h3 class="sponsor-category font-serif">TO LIGHT OUR PATH</h3>
+              <div class="sponsor-names">
+                <p class="sponsor-name font-serif">MR. RICHARD ANTHONY MARCO</p>
+                <p class="sponsor-name font-serif">MS. ALLISON GOMEZ</p>
+              </div>
+            </div>
+
+            <div class="sponsor-group">
+              <h3 class="sponsor-category font-serif">TO CLOTHE US AS ONE</h3>
+              <div class="sponsor-names">
+                <p class="sponsor-name font-serif">MR. EMMERSON ROSERO</p>
+                <p class="sponsor-name font-serif">MS. PORTIA LOU CONTE</p>
+              </div>
+            </div>
+
+            <div class="sponsor-group">
+              <h3 class="sponsor-category font-serif">TO BIND US</h3>
+              <div class="sponsor-names">
+                <p class="sponsor-name font-serif">MR. JERICKO RAZAL</p>
+                <p class="sponsor-name font-serif">
+                  MS. CARIZZA DIOSELLE LEONARDO
+                </p>
+              </div>
+            </div>
           </div>
 
-          <!-- Date and Time -->
-          <div class="formal-date-time">
-            <h2 class="formal-date font-serif">12 . 01 . 2025</h2>
-            <p class="formal-time font-serif">THREE O'CLOCK IN THE AFTERNOON</p>
+          <!-- Wedding Party Section -->
+          <div class="program-section wedding-party-section">
+            <div class="wedding-party-grid">
+              <div class="wedding-party-column">
+                <h3 class="party-title font-serif">GROOMSMEN</h3>
+                <p class="party-name font-serif">MR. KNOLL ARNELLE LAUREL</p>
+                <p class="party-name font-serif">MR. CARL JASPER ARCIAGA</p>
+              </div>
+              <div class="wedding-party-column">
+                <h3 class="party-title font-serif">BRIDES MAIDS</h3>
+                <p class="party-name font-serif">MS. MAANNE GRACE ANDRES</p>
+                <p class="party-name font-serif">MS. MARIA KARLA SABIJON</p>
+              </div>
+            </div>
           </div>
 
-          <!-- Location -->
-          <div class="formal-location">
-            <p class="font-serif">TIMMY IN THE WOODS</p>
-            <p class="font-serif">ARKLOW, IRL.</p>
+          <!-- Bearers Section -->
+          <div class="program-section bearers-section">
+            <div class="bearers-grid">
+              <div class="bearer-column">
+                <h3 class="bearer-title font-serif">RING BEARER</h3>
+                <p class="bearer-name font-serif">MART GAVRIEL MAGDALUYO</p>
+              </div>
+              <div class="bearer-column">
+                <h3 class="bearer-title font-serif">COIN BEARER</h3>
+                <p class="bearer-name font-serif">NATE DIOSEPH JULIO MALLARI</p>
+              </div>
+            </div>
+            <div class="bible-bearer">
+              <h3 class="bearer-title font-serif">BIBLE BEARER</h3>
+              <p class="bearer-name font-serif">KHIEL MARIELLE MAGDALUYO</p>
+            </div>
+          </div>
+
+          <!-- Flower Girls Section -->
+          <div class="program-section flower-girls-section">
+            <h3 class="flower-girl-title font-serif">FLOWER GIRLS</h3>
+            <div class="flower-girls-names">
+              <p class="flower-girl-name font-serif flower-girl-left">
+                CARI ELIZABETH MALLARI
+              </p>
+              <p class="flower-girl-name font-serif flower-girl-right">
+                AMBER SABINA FLORES
+              </p>
+            </div>
           </div>
         </div>
       </div>

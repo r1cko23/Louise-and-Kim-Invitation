@@ -88,6 +88,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Background Music */
+#weddingMusic {
+  display: none;
+  position: fixed;
+  top: -9999px;
+  left: -9999px;
+}
+
 /* Utility Classes */
 .text-center {
   text-align: center;
@@ -229,17 +237,32 @@ body {
   padding: var(--spacing-md) 0.8rem;
 }
 
-/* Fourth page specific styling - Formal Invitation */
+/* Fourth page specific styling - Wedding Program */
 #page4 .invitation-card {
-  background: #000000;
-  color: #666666;
+  background: var(--background-color);
+  background-image: url("Flower2.png");
+  background-size: 100%;
+  background-position: 90% 20%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #2c2c2c;
   max-width: 100%;
   width: 100%;
-  padding: var(--spacing-xl) var(--spacing-lg);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: var(--spacing-md) 0.8rem;
+}
+
+/* Fifth page specific styling - Wedding Program Details */
+#page5 .invitation-card {
+  background: var(--background-color);
+  background-image: url("Flower2.png");
+  background-size: 100%;
+  background-position: 90% 20%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #2c2c2c;
+  max-width: 100%;
+  width: 100%;
+  padding: var(--spacing-md) 0.8rem;
 }
 
 .invitation-card {
@@ -369,6 +392,7 @@ body {
   margin-top: 0;
   text-align: center;
   flex-shrink: 0;
+  margin-bottom: 1rem;
 }
 
 .request-text p {
@@ -392,7 +416,7 @@ body {
   gap: 0.2rem;
   text-align: center;
   flex: 1;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .date-time-group {
@@ -550,6 +574,8 @@ body {
   transition: all 0.3s ease;
   padding: var(--spacing-sm);
   border-radius: var(--radius-md);
+  display: block;
+  opacity: 1;
 }
 
 .rsvp-icon:hover {
@@ -570,6 +596,7 @@ body {
   padding: 0.8rem;
   border-radius: var(--radius-md);
   transition: all 0.3s ease;
+  gap: 0.5rem;
 }
 
 .rsvp-cta:hover {
@@ -579,6 +606,19 @@ body {
 
 .rsvp-cta:active {
   transform: translateY(0);
+}
+
+.rsvp-btn-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+  display: block;
+  opacity: 1;
+}
+
+.rsvp-cta:hover .rsvp-btn-icon {
+  transform: scale(1.1);
+  color: var(--secondary-color);
 }
 
 .rsvp-cta span {
@@ -1027,6 +1067,10 @@ body {
     font-size: 3.2rem;
   }
 
+  .rsvp-btn-icon {
+    font-size: 1.8rem;
+  }
+
   .rsvp-cta span {
     font-size: 1rem;
   }
@@ -1109,6 +1153,18 @@ body {
     max-width: 450px;
   }
 
+  /* Page 4 - Tablet */
+  #page4 .invitation-card {
+    padding: 2.5rem var(--spacing-xl);
+    max-width: 450px;
+  }
+
+  /* Page 5 - Tablet */
+  #page5 .invitation-card {
+    padding: 2.5rem var(--spacing-xl);
+    max-width: 450px;
+  }
+
   .the-text {
     font-size: 1.4rem;
   }
@@ -1130,6 +1186,10 @@ body {
   }
 
   .flower-decoration .flower-image {
+    width: 90px;
+  }
+
+  .wedding-party-section .flower-decoration .flower-image {
     width: 90px;
   }
 
@@ -1209,6 +1269,10 @@ body {
     font-size: 3.6rem;
   }
 
+  .rsvp-btn-icon {
+    font-size: 2rem;
+  }
+
   .rsvp-cta span {
     font-size: 1.1rem;
   }
@@ -1249,6 +1313,18 @@ body {
 
   /* Page 3 - Desktop */
   #page3 .invitation-card {
+    padding: 3rem 2.5rem;
+    max-width: 500px;
+  }
+
+  /* Page 4 - Desktop */
+  #page4 .invitation-card {
+    padding: 3rem 2.5rem;
+    max-width: 500px;
+  }
+
+  /* Page 5 - Desktop */
+  #page5 .invitation-card {
     padding: 3rem 2.5rem;
     max-width: 500px;
   }
@@ -1485,6 +1561,21 @@ textarea:focus {
   text-align: right;
 }
 
+/* Flower Decoration for Page 4 - Wedding Party Section */
+.wedding-party-section .flower-decoration {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.wedding-party-section .flower-decoration .flower-image {
+  width: 80px;
+  height: auto;
+  opacity: 0.9;
+}
+
 /* Mobile-first responsive design for Page 3 */
 @media (max-width: 320px) {
   /* Extra small screens */
@@ -1710,6 +1801,210 @@ textarea:focus {
   .flower-decoration .flower-image {
     width: 110px;
   }
+
+  .wedding-party-section .flower-decoration .flower-image {
+    width: 110px;
+  }
+}
+
+/* Page 5 - Wedding Program Details Styles */
+
+/* Principal Sponsors Section */
+.principal-sponsors-section {
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.sponsor-group {
+  margin-bottom: 0.4rem;
+}
+
+.sponsor-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  font-family: var(--font-serif);
+}
+
+.sponsor-names {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.sponsor-name {
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin: 0.15rem 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Bearers Section */
+.bearers-section {
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.bearers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto 0.3rem auto;
+}
+
+.bearer-column {
+  text-align: center;
+}
+
+.bearer-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  font-family: var(--font-serif);
+}
+
+.bearer-name {
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin: 0.15rem 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.bible-bearer {
+  text-align: center;
+  margin-top: 0.3rem;
+}
+
+/* Flower Girls Section */
+.flower-girls-section {
+  margin-bottom: 0.3rem;
+  text-align: center;
+  position: relative;
+}
+
+.flower-girl-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  font-family: var(--font-serif);
+  text-align: center;
+}
+
+.flower-girls-names {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.flower-girl-name {
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin: 0.15rem 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.flower-girl-left {
+  text-align: left;
+  flex: 1;
+}
+
+.flower-girl-right {
+  text-align: right;
+  flex: 1;
+}
+
+/* Flower Decoration for Page 5 - Flower Girls Section */
+.flower-girls-section .flower-decoration {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.flower-girls-section .flower-decoration .flower-image {
+  width: 80px;
+  height: auto;
+  opacity: 0.9;
+}
+
+/* Responsive design for Page 5 */
+@media (min-width: 481px) {
+  .sponsor-category,
+  .bearer-title,
+  .flower-girl-title {
+    font-size: 1.1rem;
+  }
+
+  .sponsor-name,
+  .bearer-name,
+  .flower-girl-name {
+    font-size: 0.8rem;
+  }
+
+  .sponsor-names,
+  .bearers-grid,
+  .flower-girls-names {
+    max-width: 450px;
+  }
+
+  .flower-girls-section .flower-decoration .flower-image {
+    width: 90px;
+  }
+}
+
+@media (min-width: 769px) {
+  .sponsor-category,
+  .bearer-title,
+  .flower-girl-title {
+    font-size: 1.2rem;
+  }
+
+  .sponsor-name,
+  .bearer-name,
+  .flower-girl-name {
+    font-size: 0.85rem;
+  }
+
+  .sponsor-names,
+  .bearers-grid,
+  .flower-girls-names {
+    max-width: 500px;
+  }
+
+  .flower-girls-section .flower-decoration .flower-image {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flower-girls-section .flower-decoration .flower-image {
+    width: 110px;
+  }
 }
 
 /* High contrast mode support */
@@ -1859,5 +2154,247 @@ textarea:focus {
 
   .formal-location p {
     font-size: 1.1rem;
+  }
+}
+
+/* Page 4 - Wedding Program Styles */
+.wedding-program-content {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  color: var(--primary-color);
+  padding: 0 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* Program Title Section */
+.program-title-section {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.program-surname {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1.5px;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.program-surname.font-script {
+  font-family: var(--font-script);
+  font-size: 1.8rem;
+  font-style: italic;
+  margin-bottom: 0.1rem;
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+.program-surname.font-serif {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  align-self: flex-end;
+  margin-right: 0;
+}
+
+.program-title-rule {
+  width: 60%;
+  margin: 0.2rem auto 0;
+  border: none;
+  border-top: 1px solid var(--primary-color);
+  opacity: 0.6;
+}
+
+/* Program Sections */
+.program-section {
+  width: 100%;
+  margin-bottom: 0.2rem;
+  position: relative;
+  padding: 0.1rem 0;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  font-family: var(--font-serif);
+}
+
+/* Parents Section */
+.parents-section {
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.parents-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.parent-column {
+  text-align: center;
+}
+
+.parent-name {
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin: 0.15rem 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Ninongs & Ninangs Section */
+.ninongs-section {
+  margin-bottom: 0.3rem;
+  text-align: center;
+}
+
+.ninongs-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.ninong-name {
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin: 0.15rem 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Wedding Party Section */
+.wedding-party-section {
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+
+.wedding-party-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.wedding-party-column {
+  text-align: center;
+}
+
+.party-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.8px;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  font-family: var(--font-serif);
+}
+
+.party-name {
+  font-size: 0.65rem;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+  margin: 0.15rem 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Responsive design for Wedding Program */
+@media (min-width: 481px) {
+  .program-surname.font-script {
+    font-size: 2.2rem;
+  }
+
+  .program-surname.font-serif {
+    font-size: 3.2rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .parent-name,
+  .ninong-name,
+  .party-name {
+    font-size: 0.8rem;
+  }
+
+  .party-title {
+    font-size: 1.1rem;
+  }
+
+  .parents-grid {
+    max-width: 450px;
+  }
+
+  .ninongs-list {
+    max-width: 400px;
+  }
+
+  .wedding-party-grid {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 769px) {
+  .program-surname.font-script {
+    font-size: 2.5rem;
+  }
+
+  .program-surname.font-serif {
+    font-size: 3.8rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .parent-name,
+  .ninong-name,
+  .party-name {
+    font-size: 0.85rem;
+  }
+
+  .party-title {
+    font-size: 1.2rem;
+  }
+
+  .parents-grid {
+    max-width: 500px;
+  }
+
+  .ninongs-list {
+    max-width: 450px;
+  }
+
+  .wedding-party-grid {
+    max-width: 500px;
   }
 }

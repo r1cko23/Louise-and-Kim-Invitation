@@ -2,11 +2,13 @@
 
 // Global variables
 let currentPage = 1;
-const totalPages = 4;
+const totalPages = 5;
+let musicStarted = false;
 
-// Google Sheets configuration
-const GOOGLE_SHEETS_URL =
-  "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+// Configuration
+const CONFIG = {
+  // Add any configuration constants here
+};
 
 // Initialize the application
 document.addEventListener("DOMContentLoaded", function () {
@@ -20,12 +22,47 @@ function initializeApp() {
   // Set up keyboard navigation
   setupKeyboardNavigation();
 
+  // Set up music
+  setupMusic();
+
   // Initialize page display
   showPage(1);
 }
 
+// Music setup function
+function setupMusic() {
+  const audio = document.getElementById("weddingMusic");
+  if (audio) {
+    // Try to play music on first user interaction
+    const startMusic = () => {
+      if (!musicStarted) {
+        audio.play().catch((error) => {
+          console.log("Music autoplay prevented:", error);
+        });
+        musicStarted = true;
+      }
+    };
+
+    // Add click listeners to start music
+    document.addEventListener("click", startMusic, { once: true });
+    document.addEventListener("touchstart", startMusic, { once: true });
+    document.addEventListener("keydown", startMusic, { once: true });
+  }
+}
+
 // Page navigation functions
 function showPage(pageNumber) {
+  // Start music on first page interaction
+  if (!musicStarted) {
+    const audio = document.getElementById("weddingMusic");
+    if (audio) {
+      audio.play().catch((error) => {
+        console.log("Music autoplay prevented:", error);
+      });
+      musicStarted = true;
+    }
+  }
+
   // Hide all pages
   const pages = document.querySelectorAll(".invitation-page");
   pages.forEach((page) => {
@@ -60,6 +97,10 @@ function showPage3() {
 
 function showPage4() {
   showPage(4);
+}
+
+function showPage5() {
+  showPage(5);
 }
 
 function updatePageIndicators() {
@@ -143,8 +184,8 @@ async function handleFormSubmission(event) {
     // Prepare data for submission
     const rsvpData = prepareRSVPData(formData);
 
-    // Submit to Google Sheets
-    await submitToGoogleSheets(rsvpData);
+    // Submit RSVP
+    await submitRSVP(rsvpData);
 
     // Show success message
     showSuccessMessage();
@@ -185,31 +226,27 @@ function prepareRSVPData(formData) {
   return data;
 }
 
-// Google Sheets integration
-async function submitToGoogleSheets(data) {
+// API integration for RSVP submissions
+async function submitRSVP(data) {
   try {
-    const response = await fetch(GOOGLE_SHEETS_URL, {
-      method: "POST",
-      mode: "cors",
+    const response = await fetch('/api/rsvp', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json();
+      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
     }
 
     const result = await response.json();
     console.log("RSVP submitted successfully:", result);
+    return result;
   } catch (error) {
-    console.error("Error submitting to Google Sheets:", error);
-
-    // For development/testing, you can uncomment the following line
-    // to simulate successful submission when Google Sheets is not set up
-    // console.log('Simulated submission:', data);
-
+    console.error("Error submitting RSVP:", error);
     throw new Error("Failed to submit RSVP. Please try again later.");
   }
 }
@@ -306,6 +343,7 @@ window.showPage1 = showPage1;
 window.showPage2 = showPage2;
 window.showPage3 = showPage3;
 window.showPage4 = showPage4;
+window.showPage5 = showPage5;
 window.openRSVPForm = openRSVPForm;
 window.closeRSVPForm = closeRSVPForm;
 window.closeSuccessMessage = closeSuccessMessage;
